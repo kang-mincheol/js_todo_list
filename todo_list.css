@@ -1,1 +1,52 @@
 @charset "UTF-8";
+
+
+
+/********** reset CSS **********/
+body, p, ul, ol, li {
+    margin: 0; padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#container {
+    width: 100%; min-height: 1000px; background: url('./img/bg.jpeg') 50% no-repeat; background-size: cover; padding: 100px 20px; box-sizing: border-box;
+}
+
+.step_container {
+    display: flex; justify-content: center; flex-direction: column;
+}
+
+.step_container .step_box {
+    background-color: rgba(255, 255, 255, 0.6); padding: 50px 20px; border-radius: 20px; box-sizing: border-box;
+}
+
+.step_container .step_box[name="step_1"] {
+    width: 500px;
+}
+
+.step_container .step_box .input_box {
+    display: flex; flex-direction: column; margin-bottom: 20px;
+}
+
+.step_container .step_box .input_box .input_box_label {
+    color: #000; font-size: 20px; font-weight: 500; line-height: 1.2; margin-bottom: 10px;
+}
+
+.step_container .step_box .input_box .input_box_input {
+    color: #303030; font-size: 20px; font-weight: 400; line-height: 1.2; padding: 10px 20px; border-radius: 5px; border: 0;
+}
+
+.step_container .step_box[name="step_1"] .step_btn {
+    display: flex; justify-content: center; align-items: center; width: 100%; color: #303030; font-size: 18px; font-weight: 700; line-height: 1.2; background-color: #FFF; border-radius: 5px; box-sizing: border-box; padding: 11px; border: 0;
+}
