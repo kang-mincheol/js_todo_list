@@ -32,7 +32,7 @@ body, p, ul, ol, li {
 }
 
 .step_container .step_box[name="step_1"] {
-    width: 500px;
+    width: 500px; margin: 0 auto;
 }
 
 .step_container .step_box .input_box {
@@ -49,4 +49,27 @@ body, p, ul, ol, li {
 
 .step_container .step_box[name="step_1"] .step_btn {
     display: flex; justify-content: center; align-items: center; width: 100%; color: #303030; font-size: 18px; font-weight: 700; line-height: 1.2; background-color: #FFF; border-radius: 5px; box-sizing: border-box; padding: 11px; border: 0;
+}
+
+
+
+
+.step_container .step_box[name="step_2"] .user_name {
+    color: #000; font-size: 20px; font-weight: 500; line-height: 1.2; margin-bottom: 10px; text-align: center;
+}
+
+.step_container .step_box[name="step_2"] .time_wrap {
+    color: #000; font-size: 32px; font-weight: 700; margin-bottom: 20px; text-align: center;
+}
+
+.step_container .step_box[name="step_2"] .todo_list_wrap {
+    width: 500px; margin: 0 auto;
+}
+
+.step_container .step_box[name="step_2"] .todo_list_wrap .wrap_title {
+    color: #000; font-size: 24px; font-weight: 700; margin-bottom: 20px;
+}
+
+.step_container .step_box[name="step_2"] .todo_list_wrap[name="success"] .wrap_title {
+    color: #0096FF;
 }
