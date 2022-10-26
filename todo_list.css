@@ -28,7 +28,11 @@ body, p, ul, ol, li {
 }
 
 .step_container .step_box {
-    background-color: rgba(255, 255, 255, 0.6); padding: 50px 20px; border-radius: 20px; box-sizing: border-box;
+    display: none; background-color: rgba(255, 255, 255, 0.6); padding: 50px 20px; border-radius: 20px; box-sizing: border-box;
+}
+
+.step_container .step_box.on {
+    display: block;
 }
 
 .step_container .step_box[name="step_1"] {
@@ -48,7 +52,7 @@ body, p, ul, ol, li {
 }
 
 .step_container .step_box[name="step_1"] .step_btn {
-    display: flex; justify-content: center; align-items: center; width: 100%; color: #303030; font-size: 18px; font-weight: 700; line-height: 1.2; background-color: #FFF; border-radius: 5px; box-sizing: border-box; padding: 11px; border: 0;
+    display: flex; justify-content: center; align-items: center; width: 100%; color: #303030; font-size: 18px; font-weight: 700; line-height: 1.2; background-color: #FFF; border-radius: 5px; box-sizing: border-box; padding: 11px; border: 0; cursor: pointer;
 }
 
 
@@ -62,8 +66,16 @@ body, p, ul, ol, li {
     color: #000; font-size: 32px; font-weight: 700; margin-bottom: 20px; text-align: center;
 }
 
+.step_container .step_box[name="step_2"] .todo_container {
+    display: flex; margin-bottom: 20px;
+}
+
+.step_container .step_box[name="step_2"] .todo_list_wrap:first-child {
+    margin-right: 20px;
+}
+
 .step_container .step_box[name="step_2"] .todo_list_wrap {
-    width: 500px; margin: 0 auto;
+    flex: 1; border: 2px solid #000; border-radius: 5px; box-sizing: border-box; background-color: #FFF; padding: 10px;
 }
 
 .step_container .step_box[name="step_2"] .todo_list_wrap .wrap_title {
@@ -73,3 +85,47 @@ body, p, ul, ol, li {
 .step_container .step_box[name="step_2"] .todo_list_wrap[name="success"] .wrap_title {
     color: #0096FF;
 }
+
+.step_container .step_box[name="step_2"] .todo_list_wrap .todo_box {
+    display: flex; flex-direction: column;
+}
+
+.step_container .step_box[name="step_2"] .todo_list_wrap .todo_box .todo_row .remote_btn {
+    display: flex; align-items: center; width: 100%; padding: 5px 10px; box-sizing: border-box; border-radius: 5px; background-color: #FFF; border: 2px solid #000; transition: all 0.4s; cursor: pointer;
+}
+
+.step_container .step_box[name="step_2"] .todo_list_wrap .todo_box .todo_row .remote_btn:hover {
+    background-color: #ddd;
+}
+
+.step_container .step_box[name="step_2"] .todo_list_wrap .todo_box .todo_row .remote_btn .row_icon {
+    display: flex; justify-content: flex-start; align-items: center; width: 30px; color: #0096FF; font-size: 20px;
+}
+
+.step_container .step_box[name="step_2"] .todo_list_wrap .todo_box .todo_row .remote_btn .row_todo {
+    display: flex; align-items: center; width: calc(100% - 20px); color: #303030; font-size: 18px; font-weight: 500;
+}
+
+.step_container .step_box[name="step_2"] .todo_list_wrap[name="success"] .todo_box .todo_row .remote_btn .row_todo {
+    text-decoration: line-through;
+}
+
+
+
+
+.step_container .step_box[name="step_2"] .add_todo_container {
+    background-color: #FFF; padding: 10px; box-sizing: border-box; border: 2px solid #000; border-radius: 5px; display: flex; flex-direction: column;
+}
+
+.step_container .step_box[name="step_2"] .add_todo_container label {
+    color: #000; font-size: 24px; font-weight: 700; margin-bottom: 20px;
+}
+
+.step_container .step_box[name="step_2"] .add_todo_container #add_todo {
+    display: block; color: #000; font-size: 16px; font-weight: 400; padding: 5px 10px;
+}
+
+
+
+
+

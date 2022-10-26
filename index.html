@@ -20,7 +20,7 @@
             <input id="user_name" class="input_box_input" name="step_1_user_name" type="text"/>
         </div>
 
-        <button class="step_btn">다음</button>
+        <button class="step_btn" onclick="userNameSubmit();">다음</button>
     </div>
     <!-- step_1 -->
 
@@ -31,31 +31,43 @@
 
         <div class="time_wrap">2022-10-22 00:00:00</div>
 
-        <div class="todo_list_wrap" name="success">
-            <p class="wrap_title">SUCCESS</p>
+        <div class="todo_container">
 
-            <div class="todo_box">
-                <div class="todo_row">
-                    <p class="row_icon">✔️</p>
-                    <p class="row_todo">성공한 todo</p>
-                    <button class="remote_btn">↩️</button>
+            <div class="todo_list_wrap" name="success">
+                <p class="wrap_title">SUCCESS</p>
+    
+                <div class="todo_box">
+                    <div class="todo_row">
+                        <button class="remote_btn">
+                            <p class="row_icon">✔️</p>
+                            <p class="row_todo">성공한 todo</p>
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- todo_list_success_wrap -->
-
-        <div class="todo_list_wrap" name="todo">
-            <p class="wrap_title">TO-DO</p>
-
-            <div class="todo_box">
-                <div class="todo_row">
-                    <p class="row_icon">🔘</p>
-                    <p class="row_todo">todo list</p>
-                    <button class="remote_btn">완료</button>
+            <!-- todo_list_success_wrap -->
+    
+            <div class="todo_list_wrap" name="todo">
+                <p class="wrap_title">TO-DO</p>
+    
+                <div class="todo_box">
+                    <div class="todo_row">
+                        <button class="remote_btn">
+                            <p class="row_icon">🔘</p>
+                            <p class="row_todo">todo list</p>
+                        </button>
+                    </div>
                 </div>
             </div>
+            <!-- todo_list_wrap -->
+
         </div>
-        <!-- todo_list_wrap -->
+        <!-- todo_container -->
+
+        <div class="add_todo_container">
+            <label for="add_todo">Add TO-DO</label>
+            <input id="add_todo" type="text"/>
+        </div>
 
     </div>
     <!-- step_2 -->
@@ -74,5 +86,10 @@
 
 
 <script src="./todo_list.js"></script>
+<script>
+window.onload = function() {
+    init();
+}
+</script>
 </body>
 </html>
