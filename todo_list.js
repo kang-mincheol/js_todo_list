@@ -22,6 +22,8 @@ function userCheck() {
         document.querySelector(".step_box[name=step_2] .user_name .name_value").innerText = userName;
 
         step_2.classList.add("on");
+
+        renderTODO();
     }
 }
 
@@ -30,4 +32,59 @@ function userNameSubmit() {
     localStorage.setItem('userName', userName);
 
     userCheck();
+}
+
+function setTODO() {
+    const todo = document.querySelector("#add_todo").value;
+
+    let prev = JSON.parse(localStorage.getItem("todo_list"));
+    if(prev == null) {
+        prev = [];
+    }
+    prev.push(todo);
+    localStorage.setItem("todo_list", JSON.stringify(prev));
+    todoRender();
+}
+
+function renderTODO() {
+    successRender();
+    todoRender();
+}
+
+function successRender() {
+    const todoWrap = document.querySelector(".step_box[name=step_2] .todo_list_wrap[name=success] .todo_box");
+    todoWrap.innerHTML = "";
+
+    let todoArr = JSON.parse(localStorage.getItem("success_list"));
+    let renderHTML = "";
+    for(let key in todoArr) {
+        renderHTML +=
+            '<div class="todo_row">'+
+                '<button class="remote_btn">'+
+                    '<p class="row_icon">✔️</p>'+
+                    '<p class="row_todo">'+todoArr[key]+'</p>'+
+                '</button>'+
+            '</div>';
+    }
+
+    todoWrap.innerHTML = renderHTML;
+}
+
+function todoRender() {
+    const todoWrap = document.querySelector(".step_box[name=step_2] .todo_list_wrap[name=todo] .todo_box");
+    todoWrap.innerHTML = "";
+
+    let todoArr = JSON.parse(localStorage.getItem("todo_list"));
+    let renderHTML = "";
+    for(let key in todoArr) {
+        renderHTML +=
+            '<div class="todo_row">'+
+                '<button class="remote_btn">'+
+                    '<p class="row_icon">🔘</p>'+
+                    '<p class="row_todo">'+todoArr[key]+'</p>'+
+                '</button>'+
+            '</div>';
+    }
+
+    todoWrap.innerHTML = renderHTML;
 }
