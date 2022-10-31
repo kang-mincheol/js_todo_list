@@ -83,7 +83,7 @@ function successRender() {
     for(let key in todoObj) {
         renderHTML +=
             '<div class="todo_row">'+
-                '<button class="remote_btn">'+
+                '<button class="remote_btn" name="'+key+'" onclick="successClick(event);">'+
                     '<p class="row_icon">✔️</p>'+
                     '<p class="row_todo">'+todoObj[key]+'</p>'+
                 '</button>'+
@@ -150,6 +150,28 @@ function todoClick(e) {
     const lastIndex = Object.keys(successObj).length + 1;
     successObj[lastIndex] = todoValue;
     localStorage.setItem("success_list", JSON.stringify(successObj));
+
+    todoSorting();
+    renderTODO();
+}
+
+function successClick(e) {
+    let nameValue = null;
+    if(e.target.className != "remote_btn") {
+        nameValue = e.target.parentNode.attributes["name"].value;
+    } else {
+        nameValue = e.target.attributes["name"].value;
+    }
+
+    let successObj = JSON.parse(localStorage.getItem("success_list"));
+    const successValue = successObj[nameValue];
+    delete successObj[nameValue];
+    localStorage.setItem("success_list", JSON.stringify(successObj));
+
+    let todoObj = JSON.parse(localStorage.getItem("todo_list"));
+    const lastIndex = Object.keys(todoObj).length + 1;
+    todoObj[lastIndex] = successValue;
+    localStorage.setItem("todo_list", JSON.stringify(todoObj));
 
     todoSorting();
     renderTODO();
