@@ -21,6 +21,9 @@ function userCheck() {
 
         document.querySelector(".step_box[name=step_2] .user_name .name_value").innerText = userName;
 
+        startClock();
+        setInterval(startClock, 1000);
+
         step_2.classList.add("on");
 
         renderTODO();
@@ -32,6 +35,18 @@ function userNameSubmit() {
     localStorage.setItem('userName', userName);
 
     userCheck();
+}
+
+function startClock() {
+    const clock = document.querySelector(".step_box[name=step_2] .time_wrap");
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const hours = date.getHours();
+    const min = date.getMinutes();
+    const sec = date.getSeconds();
+    clock.innerText = `${year}-${month}-${day} ${hours}:${min}:${sec}`;
 }
 
 function setTODO() {
