@@ -176,3 +176,10 @@ function successClick(e) {
     todoSorting();
     renderTODO();
 }
+
+function todoReset() {
+    localStorage.removeItem('todo_list');
+    localStorage.removeItem('success_list');
+    localStorage.removeItem('userName');
+    userCheck();
+}
