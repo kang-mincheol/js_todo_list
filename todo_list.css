@@ -28,7 +28,7 @@ body, p, ul, ol, li {
 }
 
 .step_container .step_box {
-    display: none; background-color: rgba(255, 255, 255, 0.6); padding: 50px 20px; border-radius: 20px; box-sizing: border-box;
+    display: none; background-color: rgba(255, 255, 255, 0.6); padding: 50px 20px; border-radius: 20px; box-sizing: border-box; position: relative;
 }
 
 .step_container .step_box.on {
@@ -57,6 +57,10 @@ body, p, ul, ol, li {
 
 
 
+
+.step_container .step_box[name="step_2"] .reset_btn {
+    display: flex; justify-content: center; align-items: center; padding: 5px 10px; border: 2px solid #000; border-radius: 5px; box-sizing: border-box; background-color: #FFF; color: #000; font-size: 18px; font-weight: 700; position: absolute; top: 10px; right: 10px; cursor: pointer;
+}
 
 .step_container .step_box[name="step_2"] .user_name {
     color: #000; font-size: 20px; font-weight: 500; line-height: 1.2; margin-bottom: 10px; text-align: center;
